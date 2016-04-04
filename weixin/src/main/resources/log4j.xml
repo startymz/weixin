@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<appender name="lhFile" class="org.apache.log4j.FileAppender">
+		<param name="File" value="${LOG_HOME}/lifehelper.log" />
+		<param name="Append" value="true" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="[%c][%d{yyyy-MM-dd HH:mm:ss SSS}][%-5p][%m]%n" />
+		</layout>
+	</appender>
+
+	<appender name="lhConsole" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="[%c][%d{yyyy-MM-dd HH:mm:ss SSS}][%-5p][%m]%n" />
+		</layout>
+	</appender>
+
+	<appender name="lhFileAsync" class="org.apache.log4j.AsyncAppender">
+		<param name="BufferSize" value="1024" />
+		<param name="LocationInfo" value="false" />
+		<appender-ref ref="lhConsole" />
+	</appender>
+
+	<logger name="java.sql.Connection">
+		<level value="DEBUG" />
+	</logger>
+	<logger name="java.sql.PreparedStatement">
+		<level value="DEBUG" />
+	</logger>
+
+	<logger name="java.sql.ResultSet">
+		<level value="DEBUG" />
+	</logger>
+
+	<logger name="com.ibatis">
+		<level value="DEBUG" />
+	</logger>
+
+	<root>
+		<level value="DEBUG" />
+		<appender-ref ref="lhConsole" />
+	</root>
+
+</log4j:configuration>
