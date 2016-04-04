@@ -18,6 +18,13 @@ public class SignUtil {
      */
     public static boolean checkSignature(String signature, String timestamp,
             String nonce) {
+    	if(StringUtils.isEmputyOrNull(signature))
+    		return false;
+    	if(StringUtils.isEmputyOrNull(timestamp))
+    		return false;
+    	if(StringUtils.isEmputyOrNull(nonce))
+    		return false;
+    	
         String[] arr = new String[] { token, timestamp, nonce };
         // 将token、timestamp、nonce三个参数进行字典序排序
         //Arrays.sort(arr);
