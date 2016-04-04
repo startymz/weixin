@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 
 import com.yumengze.weixin.vo.User;
 
-@Path("/restUser")
+@Path("/reset/user")
 @Component("restUserService")
 @Scope("prototype")
 public class RestUserService {
