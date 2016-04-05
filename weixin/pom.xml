@@ -3,10 +3,11 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.yumengze</groupId>
 	<artifactId>weixin</artifactId>
-	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>weixin Maven Webapp</name>
-	<url>http://maven.apache.org</url>
+    <packaging>jar</packaging>
+    
+    
 	<properties>
 		<jackson-version>2.2.3</jackson-version>
 		<resteasy-version>3.0.16.Final</resteasy-version>
